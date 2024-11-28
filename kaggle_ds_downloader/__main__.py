@@ -1,17 +1,17 @@
 
-
+import os
 from kaggle.api.kaggle_api_extended import KaggleApi
 
 
 def main(
     dataset_id: str = "dataset-name",
-    destination: str = "./data"  # ダウンロード先ディレクトリ
+    destination: str = "./data"
 ):
-    # Kaggle APIの初期化
+    if not os.path.exists(destination):
+        os.makedirs(destination, exist_ok=True)
     api = KaggleApi()
     api.authenticate()
 
-    # データセットのダウンロード
     api.dataset_download_files(
         dataset_id,
         path=destination,
