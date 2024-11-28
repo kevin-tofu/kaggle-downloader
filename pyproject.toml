@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "kaggle-downloader"
+version = "0.1.0"
+description = ""
+authors = ["kohei <koheitech001@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "kaggle_downloader"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+kaggle = "^1.6.17"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
